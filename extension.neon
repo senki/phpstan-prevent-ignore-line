@@ -1,0 +1,5 @@
+services:
+	-
+		class: Senki\PhpstanPreventIgnoreLine\IgnoreLineRule
+		tags:
+			- phpstan.rules.rule

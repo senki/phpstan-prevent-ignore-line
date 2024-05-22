@@ -1,0 +1,50 @@
+{
+  "name": "senki/phpstan-prevent-ignore-line",
+  "description": "PHPStan rule to detect and prohibit the use of `@phpstan-ignore-error-line` and `@phpstan-ignore-error-next-line` annotations within your PHP codebase.",
+  "license": "MIT",
+  "type": "phpstan-extension",
+  "keywords": [
+    "static analysis",
+    "code analysis",
+    "code analyse",
+    "phpstan"
+  ],
+  "autoload": {
+    "psr-4": {
+      "Senki\\PhpstanPreventIgnoreLine\\": "src/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "sort-packages": true
+  },
+  "extra": {
+    "phpstan": {
+      "includes": [
+        "extension.neon"
+      ]
+    }
+  },
+  "require": {
+    "php": "^7.2 || ^8.0",
+    "phpstan/phpstan": "<1.11"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.57",
+    "phpstan/phpstan-deprecation-rules": "^1.1",
+    "phpstan/phpstan-strict-rules": "^1.5",
+    "phpunit/phpunit": "^11.1"
+  },
+  "scripts": {
+    "cs": "php-cs-fixer fix",
+    "stan": "phpstan",
+    "unit": "phpunit",
+    "test": [
+      "@cs",
+      "@stan",
+      "@unit"
+    ]
+  }
+}
